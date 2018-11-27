@@ -158,11 +158,11 @@ def _softmax(p, mask=None):
 	
 from datetime import datetime
 now = datetime.now()
-time_suffix = 'LID_epoch100_' + now.strftime("%Y%m%d-%H%M%S")
+time_suffix = 'LID_epoch200_' + now.strftime("%Y%m%d-%H%M%S")
 
 dataroot = '~/dataset/'
 b_size = 200
-n_epochs = 100
+n_epochs = 200
 lr = 0.01
 best_loss = 100000
 n_iter = 0
@@ -251,7 +251,7 @@ def main():
         test_dataset,
         batch_size=b_size, shuffle=False, num_workers=2)
 
-    model = ResNet(9, res_option='A', use_dropout=False).to(device)
+    model = ResNet(9, res_option='A', use_dropout=True).to(device)
     print(model)
     optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=0.0001)
 
