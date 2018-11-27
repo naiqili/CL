@@ -158,7 +158,7 @@ def _softmax(p, mask=None):
 	
 from datetime import datetime
 now = datetime.now()
-time_suffix = 'LID_' + now.strftime("%Y%m%d-%H%M%S")
+time_suffix = 'LID_epoch100_' + now.strftime("%Y%m%d-%H%M%S")
 
 dataroot = '~/dataset/'
 b_size = 200
