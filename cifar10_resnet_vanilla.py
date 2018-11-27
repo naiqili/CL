@@ -192,7 +192,7 @@ def train(model, device, train_loader, test_loader, optimizer, epoch):
             test_loss = test_validate(model, device, test_loader)
 
 def main():        
-    dataroot = 'D:\Lab\dataset'
+    dataroot = '~\dataset\'
     
     transform_train = transforms.Compose([
         transforms.RandomCrop(32, padding=4),

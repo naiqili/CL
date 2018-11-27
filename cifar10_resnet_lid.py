@@ -136,7 +136,7 @@ lid_res = torch.load(lid_file)
 lid_vec = np.mean(lid_res, axis=1)
 lid_idx = np.argsort(lid_vec)
 
-train_dataset = torchvision.datasets.CIFAR10(root=dataroot, train=True, download=False, transform=transforms.ToTensor())
+train_dataset = torchvision.datasets.CIFAR10(root=dataroot, train=True, download=True, transform=transforms.ToTensor())
 train_size = len(train_dataset)
 
 classes = ('plane', 'car', 'bird', 'cat',
@@ -242,8 +242,8 @@ def main():
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
     ])
 
-    train_dataset = torchvision.datasets.CIFAR10(root=dataroot, train=True, download=False, transform=transform_train)
-    test_dataset = torchvision.datasets.CIFAR10(root=dataroot, train=False, download=False, transform=transform_test)
+    train_dataset = torchvision.datasets.CIFAR10(root=dataroot, train=True, download=True, transform=transform_train)
+    test_dataset = torchvision.datasets.CIFAR10(root=dataroot, train=False, download=True, transform=transform_test)
     
     train_size = len(train_dataset)
     
