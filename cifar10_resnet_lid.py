@@ -256,7 +256,7 @@ def main():
     optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=0.0001)
 
     #temp_list = [0.05, 0.1, 0.5, 1, 2, 5, 10]
-	temp_list = np.arange(0.05, 0.5, 0.01).tolist() + np.arange(0.5, 10, 0.2).tolist() 
+    temp_list = np.arange(0.05, 0.5, 0.01).tolist() + np.arange(0.5, 10, 0.2).tolist() 
     for epoch in range(1, n_epochs + 1):
         if epoch - 1 < len(temp_list):
             T = temp_list[epoch - 1]
