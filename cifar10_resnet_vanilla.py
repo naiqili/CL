@@ -132,7 +132,7 @@ from datetime import datetime
 now = datetime.now()
 time_suffix = 'Vanilla_epoch100_' + now.strftime("%Y%m%d-%H%M%S")
 
-dataroot = 'd:/lab/dataset/'
+dataroot = '~/dataset/'
 b_size = 200
 n_epochs = 100
 lr = 0.01
@@ -206,8 +206,8 @@ def main():
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
     ])
 
-    train_dataset = torchvision.datasets.CIFAR10(root=dataroot, train=True, download=False, transform=transform_train)
-    test_dataset = torchvision.datasets.CIFAR10(root=dataroot, train=False, download=False, transform=transform_test)
+    train_dataset = torchvision.datasets.CIFAR10(root=dataroot, train=True, download=True, transform=transform_train)
+    test_dataset = torchvision.datasets.CIFAR10(root=dataroot, train=False, download=True, transform=transform_test)
     
     train_size = len(train_dataset)
     
