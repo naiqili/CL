@@ -131,7 +131,7 @@ class AvgPoolPadding(nn.Module):
         return out
 		
 lid_file = './tmp/train_lid_k100'
-dataroot = '~/dataset'
+dataroot = '~/dataset/'
 lid_res = torch.load(lid_file)
 lid_vec = np.mean(lid_res, axis=1)
 lid_idx = np.argsort(lid_vec)
@@ -228,7 +228,7 @@ def train(model, device, train_loader_per_class, test_loader, optimizer, epoch):
             test_loss = test_validate(model, device, test_loader)
 
 def main():        
-    dataroot = '~\dataset'
+    dataroot = '~/dataset/'
     
     transform_train = transforms.Compose([
         transforms.RandomCrop(32, padding=4),
