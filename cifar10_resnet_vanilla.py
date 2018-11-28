@@ -8,7 +8,7 @@ import torchvision
 import torchvision.transforms as transforms
 from torch.utils.data.dataset import random_split
 from tensorboardX import SummaryWriter
-from cifar10_model import *
+from cifar10_model.resnet import *
 
 import os
 
