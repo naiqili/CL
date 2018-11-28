@@ -258,8 +258,8 @@ def main():
     #temp_list = [0.05, 0.1, 0.5, 1, 2, 5, 10]
     temp_list = np.arange(0.05, 0.5, 0.01).tolist() + np.arange(0.5, 10, 0.2).tolist() 
     for epoch in range(1, n_epochs + 1):
-        if epoch - 1 < len(temp_list):
-            T = temp_list[epoch - 1]
+        if (epoch - 1) // 2 < len(temp_list):
+            T = temp_list[(epoch - 1) // 2]
         else:
             T = temp_list[-1]
         print('Set temperature: %f' % T)
